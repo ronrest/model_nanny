@@ -8,6 +8,7 @@ Monitor the progress of training models.
 
 **TODO:** Add description of dependencies
 
+**TODO:** Add screenshots
 
 ## Insatalling Flask
 ```sh
