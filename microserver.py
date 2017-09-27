@@ -11,10 +11,15 @@ from flask import render_template, url_for
 app = Flask(__name__)
 
 # SETTINGS
+MODELS_DIR = "../models"
 PORT = 8080
 HOST = "0.0.0.0"
 THREADED = True
-MODELS_DIR = "../models"
+DEBUG = False     # Put the server in debug mode?
+                  # DANGER! Setting to True makes the system vulnerable to
+                  # attack. Should not be used on a publically accesible
+                  # IP addresss.
+                  # Remember to turn it back to False as soon as you are done.
 
 # TODO: Chose which metrics to show on the models page plots using a dict, eg:
 #       {"Accuracies over time":
@@ -91,4 +96,4 @@ def model_page(model_name):
                            valid_loss=evals.get("valid_loss", []),
                            )
 
-app.run(host=HOST, port=PORT, threaded=THREADED)
+app.run(host=HOST, port=PORT, threaded=THREADED, debug=DEBUG)
