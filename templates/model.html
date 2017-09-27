@@ -10,15 +10,25 @@
     <body>
         <a class="button" href="../">HOME</a>
         <h1>{{model_name}}</h1>
-        <canvas id="myChart"></canvas>
+        <canvas id="accuracy_plot"></canvas>
+        <canvas id="loss_plot"></canvas>
         <script type="text/javascript">
-            var context = document.getElementById('myChart').getContext('2d');
+            var accuracy_plot_context = document.getElementById('accuracy_plot').getContext('2d');
+            var loss_plot_context = document.getElementById('loss_plot').getContext('2d');
+
             lineplot(
-                ctx=context,
+                ctx=accuracy_plot_context,
                 x={{x}},
-                train_data={{train_data}},
-                valid_data={{valid_data}},
-                title="{{plot_title}}",
+                train_data={{train_acc}},
+                valid_data={{valid_acc}},
+                title="{{acc_plot_title}}",
+            );
+            lineplot(
+                ctx=loss_plot_context,
+                x={{x}},
+                train_data={{train_loss}},
+                valid_data={{valid_loss}},
+                title="{{loss_plot_title}}",
             );
         </script>
         <h2>Model Details</h2>
