@@ -10,6 +10,12 @@ from flask import Flask
 from flask import render_template, url_for
 app = Flask(__name__)
 
+# SETTINGS
+PORT = 8080
+HOST = "0.0.0.0"
+THREADED = True
+MODELS_DIR = "../models"
+
 # TODO: Chose which metrics to show on the models page plots using a dict, eg:
 #       {"Accuracies over time":
 #           {
@@ -33,8 +39,6 @@ app = Flask(__name__)
 
 # TODO: Use a more responsive html style. Text looks huge on desktop but tiny
 #       on mobile
-
-MODELS_DIR = "../models"
 
 def pickle2obj(file):
     with open(file, mode="rb") as fileObj:
@@ -86,3 +90,5 @@ def model_page(model_name):
                            train_loss=evals.get("train_loss", []),
                            valid_loss=evals.get("valid_loss", []),
                            )
+
+app.run(host=HOST, port=PORT, threaded=THREADED)
