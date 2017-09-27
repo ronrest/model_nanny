@@ -80,9 +80,9 @@ def show_user_profile(model_name):
                            model_name=model_name,
                            x=list(range(len(evals["valid_acc"]))),
                            acc_plot_title="Accuracy over time",
-                           train_acc=evals["train_acc"],
-                           valid_acc=evals["valid_acc"],
+                           train_acc=evals.get("train_acc", []),
+                           valid_acc=evals.get("valid_acc", []),
                            loss_plot_title="Loss over time",
-                           train_loss=evals["train_loss"],
-                           valid_loss=evals["valid_loss"],
+                           train_loss=evals.get("train_loss", []),
+                           valid_loss=evals.get("valid_loss", []),
                            )
