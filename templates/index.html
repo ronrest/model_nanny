@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Models Training</title>
+        <link rel="stylesheet" href="{{style_path}}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <h1>Models Training</h1>
+
+        {% for model_name, score in model_and_scores %}
+        <li class="model_list_item" onclick="location.href='models/{{model_name}}';">
+            <div class="model_name">{{model_name}}</div>
+            <div class="model_score">{{score}}</div>
+        </li>
+        {% endfor %}
+
+    </body>
+</html>
