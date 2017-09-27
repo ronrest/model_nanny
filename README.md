@@ -10,7 +10,8 @@ Monitor the progress of training models.
 
 **TODO:** Add screenshots
 
-## Insatalling Flask
+## Installing Flask
+
 ```sh
 # ===============================================
 # INSTALLING FLASK
