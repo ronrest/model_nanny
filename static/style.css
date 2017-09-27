@@ -1,0 +1,122 @@
+@import 'https://fonts.googleapis.com/css?family=Dosis:200,400,700';
+body {
+    color: #333333; /* var(--text_color) */
+	background-color:#F9F9F9;
+	font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+	font-size: 1.5em;
+    /*line-height: 1.4;*/
+}
+
+p{
+    color: #333333;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dosis', sans-serif;
+	font-weight: 700;
+    color: #307EC7;
+}
+
+li {
+    font-family: 'Droid Serif', serif;
+    color: #333333;
+    /*font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.3;*/
+}
+
+b{
+    color: #111111; /* var(--bold_color) */
+}
+i{
+    color: #555555; /* var(--italic_color) */
+}
+
+em.em1{
+    color: #499236; /*#1B8100; #346BD1;*/
+}
+
+
+.button {
+    background-color: #73AD21; /* var(--green) */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 15px 32px;
+    margin: 4px 2px;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover, .button:focus{
+    box-shadow:inset 0 0 0 99999px rgba(0,0,0,0.4);
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.button:active{
+    border-width: 2px;
+    border-style: solid;
+    /*box-shadow:inset 0 0 0 99999px rgba(0,0,0,0.4);*/
+    color: #FFFFFF;
+}
+
+.buttonBlue {background-color: #008CBA;}
+.buttonRed {background-color: #f44336;}
+.buttonGray {background-color: #e7e7e7; color: black;}
+.buttonGunmetal {background-color: #555555;}
+
+
+li.model_list_item{
+	list-style-type: none;
+	width: 100%;
+	padding: 10px;
+	background-color: #EEE;
+	text-decoration: none;
+	border-style: solid;
+	border-width: 1px 0 1px 0;
+	border-color: #666;
+	cursor: pointer;
+	overflow: hidden;
+	-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+ box-sizing: border-box;
+}
+
+li.model_list_item:hover,
+li.model_list_item:focus{
+    color: #FFFFFF;
+    background-color: #73AD21;
+    outline: none;
+}
+
+li.model_list_item .model_name{
+	color: #666;
+	width: 70%;
+    float: left;
+    /*border: 1px solid red;*/
+	font-size: 1.9em;
+	font-weight: 400;
+	color: #666;
+}
+
+li.model_list_item .model_score{
+	color: #999;
+    float: right;
+	overflow: hidden;
+	background-color: #DDD;
+	padding: 5px;
+    /*border: 1px solid green;*/
+}
+
+li.model_list_item:hover .model_name,
+li.model_list_item:focus .model_name,
+li.model_list_item:hover .model_score,
+li.model_list_item:focus .model_score{
+		color: #FFF;
+}
