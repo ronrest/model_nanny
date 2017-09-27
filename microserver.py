@@ -72,7 +72,7 @@ def index():
 
 
 @app.route('/models/<model_name>')
-def show_user_profile(model_name):
+def model_page(model_name):
     score = get_best_score(model_name)
     evals = get_evals_dict(model_name)
     return render_template('model.html',
