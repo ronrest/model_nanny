@@ -25,6 +25,12 @@ app = Flask(__name__)
 #    This should perhaps be put in a config file, so user does not have to
 #    mess around with the python code here.
 
+# TODO: make use of a file `training.txt` that lets you know what file/files
+#       is/are currently in the process of being trained.
+#       The existence of the file means it is training.
+#       The absesnse of the file will mean it is no longer training.
+#       Put some icon on the index, and model page to indicate it is training
+
 MODELS_DIR = "../models"
 
 def pickle2obj(file):
