@@ -38,6 +38,8 @@ def get_evals_dict(model_name):
 @app.route("/")
 def index():
     model_names = os.listdir(MODELS_DIR)
+    # TODO: use a better sorting method. Does not do too well with filenames
+    #       contianing numbers that are not fixed length and preceded by 0s
     model_names.sort(key=lambda item: item.lower()) # Put in alphabetical order
     scores = [get_best_score(model) for model in model_names]
     return render_template('index.html',
