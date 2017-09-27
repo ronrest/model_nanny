@@ -10,6 +10,21 @@ from flask import Flask
 from flask import render_template, url_for
 app = Flask(__name__)
 
+# TODO: Chose which metrics to show on the models page plots using a dict, eg:
+#       {"Accuracies over time":
+#           {
+#           "train": "train_acc",
+#           "valid": "valid_acc",
+#           },
+#        "Loss over time":
+#           {
+#           "train": "train_loss",
+#           "valid": "valid_loss",
+#           }
+#       }
+#    This should perhaps be put in a config file, so user does not have to
+#    mess around with the python code here.
+
 MODELS_DIR = "../models"
 
 def pickle2obj(file):
