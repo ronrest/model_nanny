@@ -31,6 +31,9 @@ app = Flask(__name__)
 #       The absesnse of the file will mean it is no longer training.
 #       Put some icon on the index, and model page to indicate it is training
 
+# TODO: Use a more responsive html style. Text looks huge on desktop but tiny
+#       on mobile
+
 MODELS_DIR = "../models"
 
 def pickle2obj(file):
