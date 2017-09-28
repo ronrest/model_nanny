@@ -72,9 +72,10 @@ def get_best_score(model_name):
 
 def get_evals_dict(model_name):
     try:
-        evals = pickle2obj(os.path.join(MODELS_DIR, model_name, "evals.pickle"))
+        pickle_file = os.path.join(MODELS_DIR, model_name, "evals.pickle")
+        evals = pickle2obj(pickle_file)
     except:
-        print("WARNING: Could not load {} \n - Returning blank evals dict instead")
+        print("WARNING: Could not load {} \n - Returning blank evals dict instead".format(pickle_file))
         evals = {"valid_acc": [], "train_acc":[]}
     return evals
 
