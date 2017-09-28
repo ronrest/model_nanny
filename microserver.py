@@ -54,6 +54,14 @@ def pickle2obj(file):
     return obj
 
 
+def get_train_status_file(model_name):
+    try:
+        with open(os.path.join(MODELS_DIR, model_name, "train_status.txt"), mode="r") as f:
+            return f.read().strip()
+    except:
+        return ""
+
+
 def get_best_score(model_name):
     try:
         with open(os.path.join(MODELS_DIR, model_name, "best_score.txt"), mode="r") as f:
@@ -78,9 +86,12 @@ def index():
     #       contianing numbers that are not fixed length and preceded by 0s
     model_names.sort(key=lambda item: item.lower()) # Put in alphabetical order
     scores = [get_best_score(model) for model in model_names]
+    statuses = [get_train_status_file(model) for model in model_names]
+    # Sort by score in descending order
+    model_score_statuses = sorted(zip(model_names,scores, statuses), key=lambda x: x[1], reverse=True)
     return render_template('index.html',
                            style_path=url_for('static', filename='style.css'),
-                           model_and_scores=zip(model_names, scores))
+                           model_score_statuses=model_score_statuses)
 
 
 @app.route('/models/<model_name>')

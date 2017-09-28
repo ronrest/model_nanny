@@ -89,11 +89,13 @@ li.model_list_item{
 }
 
 li.model_list_item:hover,
-li.model_list_item:focus{
-    color: #FFFFFF;
+li.model_list_item:focus,
+li.model_list_item:hover .model_stats{
     background-color: #73AD21;
     outline: none;
 }
+
+
 
 li.model_list_item .model_name{
 	color: #666;
@@ -105,14 +107,32 @@ li.model_list_item .model_name{
 	color: #666;
 }
 
-li.model_list_item .model_score{
-	color: #999;
+li.model_list_item .model_stats{
     float: right;
 	overflow: hidden;
-	background-color: #DDD;
+	background-color: #EEE;
 	padding: 5px;
     /*border: 1px solid green;*/
 }
+
+
+li.model_list_item .model_score{
+	color: #FF4F40;
+	font-size: 1em;
+	/*overflow: hidden;*/
+	/*border: 1px solid blue;*/
+	text-align: right;
+}
+
+li.model_list_item .model_status{
+	color: #666;
+	font-size: 0.8em;
+	/*overflow: hidden;*/
+    /*border: 1px solid green;
+		text-align: right;*/
+}
+
+
 
 li.model_list_item:hover .model_name,
 li.model_list_item:focus .model_name,
