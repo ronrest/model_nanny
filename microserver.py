@@ -45,6 +45,9 @@ DEBUG = False     # Put the server in debug mode?
 # TODO: Use a more responsive html style. Text looks huge on desktop but tiny
 #       on mobile
 
+# TODO: Make use of log files in model directory, and have a text panel that
+#       Allows you to scroll through all the logs of the model.
+
 def pickle2obj(file):
     with open(file, mode="rb") as fileObj:
         obj = pickle.load(fileObj)
