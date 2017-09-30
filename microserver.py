@@ -21,6 +21,9 @@ DEBUG = False     # Put the server in debug mode?
                   # IP addresss.
                   # Remember to turn it back to False as soon as you are done.
 
+# TODO: For some reason it requires numpy to open the pickles.
+#      I want to get rid of this dependency.
+
 # TODO: Chose which metrics to show on the models page plots using a dict, eg:
 #       {"Accuracies over time":
 #           {
