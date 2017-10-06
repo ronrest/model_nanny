@@ -43,6 +43,7 @@ flask run --host=0.0.0.0 --port=8080
 # Screenshots
 Main page that allows you to monitor the status of the model and the best
 score achieved by each model being trained (sorted by by performance).
+
 ![Screenshot of main page](sample_main_page.jpg)
 
 When you click on a model, you enter the model page, that gives you detailed
