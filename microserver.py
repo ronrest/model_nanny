@@ -68,9 +68,15 @@ def get_train_status_file(model_name):
 def get_best_score(model_name):
     try:
         with open(os.path.join(MODELS_DIR, model_name, "best_score.txt"), mode="r") as f:
-            return float(f.read().strip())
+            contents = f.read().strip()
+            return float(contents)
+    except ValueError:
+        print("WARNING! Incorrect best score file format for model", model_name)
+        print("- Expected a value that could be converted to a float.")
+        print('- Instead got:   "{}"'.format(contents))
+        return 0
     except IOError:
-        return(0)
+        return 0
 
 
 def get_evals_dict(model_name):
