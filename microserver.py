@@ -11,6 +11,8 @@ from flask import render_template, url_for
 app = Flask(__name__)
 
 # SETTINGS
+VALIDATION_METRIC = "valid_acc"
+TRAIN_METRIC = "train_acc"
 MODELS_DIR = "../models"
 PORT = 8080
 HOST = "0.0.0.0"
@@ -28,7 +30,7 @@ DEBUG = False     # Put the server in debug mode?
 #       {"Accuracies over time":
 #           {
 #           "train": "train_acc",
-#           "valid": "valid_acc",
+#           "valid": VALIDATION_METRIC,
 #           },
 #        "Loss over time":
 #           {
@@ -85,7 +87,7 @@ def get_evals_dict(model_name):
         evals = pickle2obj(pickle_file)
     except:
         print("WARNING: Could not load {} \n - Returning blank evals dict instead".format(pickle_file))
-        evals = {"valid_acc": [], "train_acc":[]}
+        evals = {VALIDATION_METRIC: [], TRAIN_METRIC:[]}
     return evals
 
 
@@ -111,10 +113,10 @@ def model_page(model_name):
     return render_template('model.html',
                            style_path=url_for('static', filename='style.css'),
                            model_name=model_name,
-                           x=list(range(len(evals["valid_acc"]))),
+                           x=list(range(len(evals[VALIDATION_METRIC]))),
                            acc_plot_title="Accuracy over time",
-                           train_acc=evals.get("train_acc", []),
-                           valid_acc=evals.get("valid_acc", []),
+                           train_acc=evals.get(TRAIN_METRIC, []),
+                           valid_acc=evals.get(VALIDATION_METRIC, []),
                            loss_plot_title="Loss over time",
                            train_loss=evals.get("train_loss", []),
                            valid_loss=evals.get("valid_loss", []),
